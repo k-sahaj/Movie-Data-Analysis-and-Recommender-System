@@ -31,7 +31,7 @@ The goal is to provide personalized movie suggestions by leveraging both movie m
 
 ---
 
-## 🗂 Repository Structure
+## Repository Structure
 
 ```text
 Movie Analytics & Recommendation System
@@ -64,88 +64,57 @@ Movie Analytics & Recommendation System
 ## Dataset
 
 The project utilizes datasets collected from:
+[Link](https://grouplens.org/datasets/movielens/)
 
 - MovieLens Dataset
 - TMDB (The Movie Database) API
 - Movie Metadata
 - Credits Dataset (Cast & Crew Information)
 - User Ratings Dataset
+  
+---
 
-The datasets contain information such as:
+## Approach 
 
-- Movie titles
-- Genres
-- Ratings
-- Vote counts
-- Cast and crew details
-- Budgets
-- Revenues
-- Keywords
-- User interactions
+The problem was divided into several steps:
+
+1. **Data Collection:** Data was collected from the MovieLens website and through a script that queried for data from various TMDB Endpoints.
+2. **Data Wrangling:** The datasets were uploaded to a dataframe and explored. Null values were filled in wherever appropriate and polluted values were discarded or wrangled.
+3. **EDA:** Extensive data visualisation and summary statistics were used to extract insights and pattern from the various datasets. The history, facts and trivia behind movies were narrated through data.
+4. **Machine Learning:** Gradient Boosting Classifer and Regressor were trained on our feature engineered dataset to predict movie success and revenue respectively. Their feature importances were noted to gain insights into what factors influence the revenues of a movie relative to budget.
+5. **Recommendation Systems:** Four different recommendation systems were built using various ideas and algorithms such as IMDB's Weighted Rating, Content Based Filtering and Collaborative Filtering.
 
 ---
 
-## Methodology
+## Tech Stack
 
-### 1️⃣ Data Collection
+- Python
+- Pandas
+- NumPy
+- Matplotlib
+- Seaborn
 
-- Acquired movie metadata from MovieLens and TMDB
-- Gathered additional information through TMDB API endpoints
-- Combined multiple datasets to create a richer analytical dataset
+- Scikit-Learn
+- Surprise
+- NLTK
 
-### 2️⃣ Data Cleaning & Preparation
+- TMDB API
+- Jupyter Notebook
 
-- Missing value treatment
-- Data type corrections
-- Feature extraction and transformation
-- Metadata normalization
-- Parsing nested JSON-like fields
-- Handling duplicate and inconsistent records
+---
 
-### 3️⃣ Exploratory Data Analysis (EDA)
+## Results
 
-Extensive analysis was conducted to uncover patterns and trends within the movie industry, including:
+### Predictive Models
 
-- Revenue and budget distributions
-- Genre popularity analysis
-- Highest-grossing movies
-- Most profitable movies
-- Cast and crew influence
-- Production company trends
-- Evolution of cinema over time
-- Rating and vote behavior analysis
+| Model | Task | Performance |
+|---------|---------|---------|
+| Gradient Boosting Regressor | Revenue Prediction | R² Score: **0.78** |
+| Gradient Boosting Classifier | Movie Success Prediction | Accuracy: **0.80** |
 
-### 4️⃣ Feature Engineering
+### Recommendation Systems
 
-Features were engineered from:
-
-- Cast information
-- Crew information
-- Genres
-- Keywords
-- Production companies
-- Budget-related metrics
-- Popularity indicators
-
-### 5️⃣ Machine Learning
-
-Two predictive models were developed:
-
-#### Revenue Prediction
-
-- Gradient Boosting Regressor
-- Predicts movie revenue based on available metadata
-
-#### Success Classification
-
-- Gradient Boosting Classifier
-- Classifies whether a movie is likely to be successful
-
-Feature importance analysis was performed to identify the most influential variables affecting movie performance.
-
-### 6️⃣ Recommendation Systems
-
-Four recommendation engines were developed:
+Successfully implemented:
 
 #### Popularity-Based Recommender
 
@@ -183,67 +152,7 @@ Combines:
 
 to generate more personalized recommendations.
 
----
-
-## Tech Stack
-
-### Programming Language
-
-- Python
-
-### Data Analysis
-
-- Pandas
-- NumPy
-
-### Data Visualization
-
-- Matplotlib
-- Seaborn
-
-### Machine Learning
-
-- Scikit-Learn
-- Surprise
-
-### Natural Language Processing
-
-- NLTK
-
-### Data Sources
-
-- TMDB API
-- MovieLens Dataset
-
-### Development Environment
-
-- Jupyter Notebook
-
----
-
-## Results
-
-### Predictive Models
-
-| Model | Task | Performance |
-|---------|---------|---------|
-| Gradient Boosting Regressor | Revenue Prediction | R² Score: **0.78** |
-| Gradient Boosting Classifier | Movie Success Prediction | Accuracy: **0.80** |
-
-### Recommendation Systems
-
-Successfully implemented:
-
-✅ Popularity-Based Recommender
-
-✅ Content-Based Recommender
-
-✅ Metadata-Based Recommender
-
-✅ Collaborative Filtering (SVD)
-
-✅ Hybrid Recommendation Engine
-
+**Result-**
 The hybrid recommender delivered the most personalized recommendations by combining user preferences with movie metadata.
 
 ---
@@ -261,32 +170,13 @@ Some notable findings from the analysis include:
 
 ---
 
-## Future Enhancements
-
-- Deploy recommendation system as a web application
-- Build an interactive Streamlit dashboard
-- Integrate real-time TMDB API updates
-- Experiment with XGBoost and LightGBM models
-- Incorporate deep learning-based recommendation techniques
-- Add model explainability using SHAP values
-- Develop user-facing recommendation interfaces
-
----
-
 ## Project Highlights
 
-- End-to-end Data Science workflow
 - Real-world movie industry dataset
 - Extensive Exploratory Data Analysis
-- Feature Engineering
 - Predictive Machine Learning Models
 - Multiple Recommendation Algorithms
-- Personalized Movie Recommendation Engine
 - Business and entertainment industry insights
 
 ---
 
-
----
-
-## ⭐ If you found this project useful, consider giving it a star!
